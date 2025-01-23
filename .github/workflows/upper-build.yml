@@ -12,9 +12,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "Building the upper project"
-      - run: pwd && ls -la"
+      - run: pwd && ls -la
       - uses: actions/checkout@v4
-      - run: pwd && ls -la"
+      - run: pwd && ls -la
       - run: go version
       - uses: actions/setup-go@v5
         with:
