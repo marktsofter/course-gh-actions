@@ -36,5 +36,5 @@ jobs:
         id: deploy
         with:
           app-name: gh-actions-web-api
-          images: weshigbee/actions-web:latest
+          images: dekany/actions-web:latest
           resource-group-name: gh-actions
