@@ -35,6 +35,6 @@ jobs:
       - uses: azure/webapps-deploy@v3
         id: deploy
         with:
-          app-name: gh-actions-web-api
+          app-name: gh-actions-dekany-web-api
           images: dekany/actions-web:latest
           resource-group-name: gh-actions

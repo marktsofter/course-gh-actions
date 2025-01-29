@@ -9,13 +9,14 @@ terraform {
 
 provider "azurerm" {
   features {}
+  subscription_id = "241627f1-4cbe-46c3-9d50-3bc162c5f9bb"
 }
 
 resource "azurerm_resource_group" "gh-actions" {
   # az group list --output table
   # https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/resource_group
   name     = "gh-actions"
-  location = "eastus"
+  location = "West Europe"
 }
 
 
@@ -34,7 +35,7 @@ resource "azurerm_service_plan" "web-api" {
 resource "azurerm_linux_web_app" "web-api" {
   # az webapp list --output table
   # https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/linux_web_app
-  name                = "gh-actions-web-api" # => https://gh-actions-web-api.azurewebsites.net # *** MAKE SURE TO SET NEW NAME (one universal namespace for everyone) ***
+  name                = "gh-actions-dekany-web-api" # => https://gh-actions-dekany-web-api.azurewebsites.net # *** MAKE SURE TO SET NEW NAME (one universal namespace for everyone) ***
   resource_group_name = azurerm_resource_group.gh-actions.name
   location            = azurerm_resource_group.gh-actions.location
 
@@ -55,7 +56,7 @@ resource "azurerm_linux_web_app" "web-api" {
   }
 
   # test with:
-  # curl -L http://gh-actions-web-api.azurewebsites.net
-  # curl -L http://gh-actions-web-api.azurewebsites.net/weatherForecast
+  # curl -L http://gh-actions-dekany-web-api.azurewebsites.net
+  # curl -L http://gh-actions-dekany-web-api.azurewebsites.net/weatherForecast
 
 }
