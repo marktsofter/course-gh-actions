@@ -8,8 +8,6 @@ on:
 
 jobs:
   generate:
-    outputs:
-      RANDOM_PASSWORD: ${{ env.RANDOM_PASSWORD }}
     runs-on: ubuntu-latest
     steps:
       - run: env | sort
