@@ -20,7 +20,7 @@ var newSummaries = new[]
 
 var summaries = new[]
 {
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
+    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching", "Sunny"
 };
 
 app.MapGet("/sensitive", (string? password) =>
@@ -28,7 +28,6 @@ app.MapGet("/sensitive", (string? password) =>
     return "Access denied!";
 });
 
-int foo;
 
 var consistentForecasts = Enumerable.Range(1, 5).Select(index =>
     new WeatherForecast
